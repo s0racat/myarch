@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+<action>
+	<icon>utilities-terminal</icon>
+	<name>ここで Terminal を開く</name>
+	<unique-id>1607865683885955-1</unique-id>
+	<command>exo-open --working-directory %f --launch TerminalEmulator</command>
+	<description>カスタムアクションの例です。</description>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<directories/>
+</action>
+<action>
+	<icon>gksu-root-terminal</icon>
+	<name>ここでroot-terminal を開く</name>
+	<unique-id>1607910046523582-1</unique-id>
+	<command>pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY xfce4-terminal --default-working-directory=%f</command>
+	<description>open root-terminal here</description>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+</actions>
