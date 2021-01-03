@@ -6,6 +6,7 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 autoload -U colors; colors
 export PROMPT="%{$fg[red]%}%n%{$reset_color%}%# "
+export RPROMPT="[%{$fg_no_bold[yellow]%}%?%{$reset_color%}]"
 setopt auto_cd
 setopt correct
 function chpwd() { exa }
