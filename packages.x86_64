@@ -100,6 +100,7 @@ xfsprogs
 xl2tpd
 zsh
 # customized
+# base-devel
 autoconf
 automake
 binutils
@@ -126,15 +127,14 @@ texinfo
 which
 zip
 unzip
+# customized
 adapta-gtk-theme
 aria2
 archlinux-wallpaper
 blueman
 bluez
 bluez-utils
-chromium
 dialog
-fcitx
 fcitx-im
 fcitx-mozc
 fcitx-configtool
