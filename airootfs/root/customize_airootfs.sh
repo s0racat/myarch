@@ -22,7 +22,6 @@ hwclock --systohc
 # NetworkManager
 systemctl enable NetworkManager
 # tlp
-tlp start
 systemctl enable tlp.service
 systemctl mask systemd-rfkill.service
 systemctl mask systemd-rfkill.socket
