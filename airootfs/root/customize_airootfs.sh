@@ -12,13 +12,12 @@ locale-gen
 sed -i "s/#Server/Server/g" /etc/pacman.d/mirrorlist
 echo 'root:root' | chpasswd
 useradd -m arch -s /bin/zsh -G storage
-echo "arch:arch" | chpasswd
+echo 'arch:arch' | chpasswd
 groupadd -r autologin
 gpasswd -a arch autologin
-su arch -c "LANG=C xdg-user-dirs-update --force"
+su arch -c 'LANG=C xdg-user-dirs-update --force'
 usermod -s /bin/zsh root
-ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
-hwclock --systohc
+systemctl enable systemd-timesyncd.service
 # NetworkManager
 systemctl enable NetworkManager
 # tlp
