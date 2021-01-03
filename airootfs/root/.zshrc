@@ -4,8 +4,8 @@ autoload -U compinit; compinit
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
-autoload -U promptinit; promptinit
-prompt walters
+autoload -U colors; colors
+export PROMPT="%{$fg[red]%}%n%{$reset_color%}%# "
 setopt auto_cd
 setopt correct
 function chpwd() { exa }
