@@ -4,6 +4,7 @@ autoload -U compinit; compinit
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+autoload -U promptinit; promptinit
 autoload -U colors; colors
 export PROMPT="%{$fg[red]%}%n%{$reset_color%}%# "
 export RPROMPT="[%{$fg_no_bold[yellow]%}%?%{$reset_color%}]"
