@@ -22,5 +22,5 @@ zstyle ':completion:*:default' menu select=2
 zstyle ':completion:*:(processes|jobs)' menu yes select=2
 zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' '+m:{A-Z}={a-z}'
 source /usr/share/doc/pkgfile/command-not-found.zsh
-source ~/.aliases
+source ~/.aliasrc
 bindkey -v
