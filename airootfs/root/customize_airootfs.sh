@@ -46,4 +46,4 @@ rm -rf /etc/systemd/system/{choose-mirror.service,pacman-init.service,etc-pacman
 rm -f /root/{.automated_script.sh,.zlogin}
 rm -f /etc/mkinitcpio-archiso.conf
 rm -rf /etc/initcpio
-
+rm -f /etc/*.new
