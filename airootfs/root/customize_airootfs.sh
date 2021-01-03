@@ -10,7 +10,7 @@ set -e -u
 locale-gen
 
 sed -i "s/#Server/Server/g" /etc/pacman.d/mirrorlist
-echo "root:root" | chpasswd
+echo 'root:root' | chpasswd
 useradd -m arch -s /bin/zsh -G storage
 echo "arch:arch" | chpasswd
 groupadd -r autologin
