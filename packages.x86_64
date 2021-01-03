@@ -142,7 +142,6 @@ wget
 xarchiver
 xdg-user-dirs
 xf86-video-intel
-xfce4-screenshooter
 zsh
 zsh-autosuggestions
 zsh-completions
@@ -152,7 +151,7 @@ polkit-gnome
 xf86-input-libinput
 xorg-xinput
 pkgfile
-xfce4-pulseaudio-plugin
+volumeicon
 exa
 bat
 android-tools
