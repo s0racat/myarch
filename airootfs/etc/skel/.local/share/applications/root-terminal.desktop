@@ -1,6 +1,6 @@
 [Desktop Entry]
-Name=root-terminal
-Exec=sh -c "pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY PATH=$PATH xfce4-terminal"
+Name=Root Terminal
+Exec=sh -c 'pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY PATH=$PATH xfce4-terminal'
 Comment=Start terminal as root
 Terminal=false
 Icon=gksu-root-terminal
