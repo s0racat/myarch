@@ -5,7 +5,7 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 autoload -U promptinit; promptinit
-prompt walters
+prompt spaceship
 setopt auto_cd
 setopt correct
 function chpwd() { exa }
@@ -21,5 +21,5 @@ zstyle ':completion:*:default' menu select=2
 zstyle ':completion:*:(processes|jobs)' menu yes select=2
 zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' '+m:{A-Z}={a-z}'
 source /usr/share/doc/pkgfile/command-not-found.zsh
-source ~/.aliases
+source ~/.aliasrc
 bindkey -v
