@@ -5,9 +5,8 @@
 linux-lts kernel, xfce4 desktop environment, customized zsh, root terminal, fcitx-mozc with japanese input, jp106 keyboard, intel-gpu optimized
 
 ## screenshot
-<img src="https://github.com/llnnn-ux/myarch/blob/master/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2020-12-15_23-16-53.png" title="screenshot1">
 
-<img src="https://github.com/llnnn-ux/myarch/blob/master/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2020-12-16_18-04-29.png" title="screenshot2">
+<img src="https://github.com/llnnn-ux/myarch/blob/master/2021-01-04_07-39.png" title="screenshot1">
 
 ## read manual
 
