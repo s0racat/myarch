@@ -49,7 +49,7 @@ mkarchiso -v -w work/ -o out/ . # customize out directory ex. /run/media/user/la
 ## prebuilt iso
 
 ```bash
-https://mega.nz/file/sr4kjTTR#qCCLBhq4q8_paJnZBT2TVAEgHp3OSOcW-ooT6FZOz-Q
+https://mega.nz/folder/0vZ1wKDC#4vTfffzF2vM9EES3BVSSrQ
 ```
 
 ## loopback boot with grub 
