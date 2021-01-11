@@ -10,15 +10,17 @@ set -e -u
 locale-gen
 
 sed -i "s/#Server/Server/g" /etc/pacman.d/mirrorlist
+# User settings
 echo 'root:root' | chpasswd
+usermod -s /bin/zsh root
 useradd -m arch -s /bin/zsh -G storage
 echo 'arch:arch' | chpasswd
 groupadd -r autologin
 gpasswd -a arch autologin
 su arch -c 'LANG=C xdg-user-dirs-update --force'
 su arch -c 'xdg-user-dirs-update --set DESKTOP ~/'
-usermod -s /bin/zsh root
 su arch -c 'chmod 755 ~/root-terminal.desktop'
+# timesync
 systemctl enable systemd-timesyncd.service
 # NetworkManager
 systemctl enable NetworkManager
