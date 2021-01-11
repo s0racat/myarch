@@ -100,7 +100,6 @@ xfsprogs
 xl2tpd
 zsh
 # customized
-base-devel
 zip
 unzip
 adapta-gtk-theme
