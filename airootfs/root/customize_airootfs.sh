@@ -32,10 +32,12 @@ systemctl set-default graphical.target
 # bluetooth
 rfkill unblock all
 systemctl enable bluetooth
+# noto-cjk
+ln -s /etc/fonts/conf.avail/70-noto-cjk.conf /etc/fonts/local.conf
 # pacman
 pkgfile -u
 yes|pacman -Scc
-yay -Yc --noconfirm
+pacman -Rsn $(pacman -Qdttq) --noconfirm
 pacman-key --init
 pacman-key --populate archlinux
 pacman -Syu --noconfirm
@@ -46,4 +48,3 @@ rm -rf /etc/systemd/system/{choose-mirror.service,pacman-init.service,etc-pacman
 rm -f /root/{.automated_script.sh,.zlogin}
 rm -f /etc/mkinitcpio-archiso.conf
 rm -rf /etc/initcpio
-rm -f /etc/*.pacnew
