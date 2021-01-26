@@ -1,14 +1,26 @@
-# myarch
+## Description
 
-## features
+Minimal GUI Environment built with archiso
 
-linux-lts kernel, xfce4 desktop environment, customized zsh, root terminal, fcitx-mozc with japanese input, jp106 keyboard, intel-gpu optimized
+## Features
 
-## screenshot
+- kernel: linux-lts
+- Desktop environment: xfce
+- User shell: zsh /Advanced Completion/Useful aliases
+- Japanese input with fcitx-mozc
+- firefox with uBlock Origin
 
-<img src="https://github.com/llnnn-ux/myarch/blob/master/2021-01-04_07-39.png" title="screenshot1">
+## Screenshot
 
-## read manual
+<img src="https://github.com/u0a266/myarch/blob/master/2021-01-04_07-39.png" title="screenshot1">
+
+## Prebuilt iso
+
+```bash
+https://mega.nz/folder/0vZ1wKDC#4vTfffzF2vM9EES3BVSSrQ
+```
+
+## Read Manual
 
 [gitlab archlinux official docs](https://gitlab.archlinux.org/archlinux/archiso/-/tree/master/docs)
 
@@ -18,49 +30,45 @@ man repo-add
 mksquashfs -h
 ```
 
-## install requirements
+## Install Requirements
 
 ```bash
-pacman -S archiso arch-install-scripts dosfstools e2fsprogs libisoburn mtools squashfs-tools --needed
+sudo pacman -S archiso arch-install-scripts dosfstools e2fsprogs libisoburn mtools squashfs-tools --needed
 ```
 
-## make custom repo
+## Make Custom Repository
 
 ```bash
-git clone https://aur.archlinux.org/someaur.git
-cd /path/to/aur
+git clone https://aur.archlinux.org/pkgname.git
+cd /path/to/cloneddir
 makepkg -s # must not be run as root
 sudo -i # or su root
-mkdir -pv /root/custom/x86_64
-cp somename.pkg.tar.zst /root/custom/x86_64
-cd /root/custom/x86_64
-repo-add custom.db.tar.xz /root/custom/x86_64/*pkg.tar.zst*
-echo "somepkgname" >> /root/myarch/packages.x86_64
+mkdir -p /root/custom/x86_64/
+cp /home/$USER/path/to/pkgname-pkgver.pkg.tar.zst /root/custom/x86_64/
+cd /root/custom/x86_64/
+repo-add custom.db.tar.xz ./*pkg.tar.zst*
+echo "pkgname" >> /root/myarch/packages.x86_64
 ```
 
-## build
+## Build
 
 ```bash
 sudo -i # or su root
-git clone https://github.com/llnnn-ux/myarch.git
+git clone https://github.com/u0a266/myarch.git
 cd myarch
-mkarchiso -v -w work/ -o out/ . # customize out directory ex. /run/media/user/label
+mkarchiso -v -w work/ -o out/ . 
 ```
-## prebuilt iso
-
-```bash
-https://mega.nz/folder/0vZ1wKDC#4vTfffzF2vM9EES3BVSSrQ
-```
-
-## loopback boot with grub 
+## Loopback iso boot with grub 
 
 [archwiki](https://wiki.archlinux.org/index.php/Multiboot_USB_drive)
 
 [archwiki ja](https://wiki.archlinux.jp/index.php/%E3%83%9E%E3%83%AB%E3%83%81%E3%83%96%E3%83%BC%E3%83%88_USB_%E3%83%89%E3%83%A9%E3%82%A4%E3%83%96)
 
+__Example__
+
 ```bash
 set isodevuuid="XXXX-XXXX"
-set label="somelabel"
+set label="LABEL"
 search --no-floppy --fs-uuid --set=root $isodevuuid
 set iso="/iso/myarch-2020.12.16-x86_64.iso"
 loopback loop $iso
