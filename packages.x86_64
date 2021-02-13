@@ -140,7 +140,6 @@ tlp-rdw
 wget
 xarchiver
 xdg-user-dirs
-xf86-video-intel
 zsh
 zsh-autosuggestions
 zsh-completions
@@ -154,7 +153,6 @@ volumeicon
 exa
 bat
 android-tools
-trash-cli
 baobab
 xorg-xinit
 xorg-server

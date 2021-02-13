@@ -21,7 +21,7 @@ su arch -c 'LANG=C xdg-user-dirs-update --force'
 su arch -c 'xdg-user-dirs-update --set DESKTOP ~/'
 su arch -c 'chmod 755 ~/root-terminal.desktop'
 # timesync
-systemctl enable systemd-timesyncd.service
+timedatectl set-ntp true
 # NetworkManager
 systemctl enable NetworkManager
 # tlp
