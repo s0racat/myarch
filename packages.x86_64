@@ -165,6 +165,7 @@ lightdm-gtk-greeter
 flameshot
 arandr
 firefox-ublock-origin
+firewalld
 # aur
 yay-bin
 man-pages-ja

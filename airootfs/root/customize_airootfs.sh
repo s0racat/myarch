@@ -24,6 +24,7 @@ su arch -c 'chmod 755 ~/root-terminal.desktop'
 timedatectl set-ntp true
 # NetworkManager
 systemctl enable NetworkManager
+systemctl enable firewalld.service
 # tlp
 systemctl enable tlp.service
 systemctl mask systemd-rfkill.service
