@@ -40,10 +40,8 @@ ln -s /etc/fonts/conf.avail/70-noto-cjk.conf /etc/fonts/local.conf
 # pacman
 pkgfile -u
 yes|pacman -Scc
-#pacman -Rsn $(pacman -Qdttq) --noconfirm; true
 pacman-key --init
 pacman-key --populate archlinux
-pacman -Syu --noconfirm
 # clean
 systemctl disable pacman-init.service choose-mirror.service
 rm -f /etc/systemd/scripts/choose-mirror
