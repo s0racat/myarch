@@ -36,20 +36,6 @@ mksquashfs -h
 sudo pacman -S archiso arch-install-scripts dosfstools e2fsprogs libisoburn mtools squashfs-tools --needed
 ```
 
-## Make Custom Repository
-
-```bash
-git clone https://aur.archlinux.org/pkgname.git
-cd /path/to/cloneddir
-makepkg -s # must not be run as root
-sudo -i # or su root
-mkdir -p /root/custom/x86_64/
-cp /home/$USER/path/to/pkgname-pkgver.pkg.tar.zst /root/custom/x86_64/
-cd /root/custom/x86_64/
-repo-add custom.db.tar.xz ./*pkg.tar.zst*
-echo "pkgname" >> /root/myarch/packages.x86_64
-```
-
 ## Build
 
 ```bash
