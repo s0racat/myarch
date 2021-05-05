@@ -12,7 +12,7 @@ Minimal GUI Environment built with [archiso](https://gitlab.archlinux.org/archli
 
 ## Screenshot
 
-<img src="https://github.com/u0a266/myarch/blob/master/2021-01-04_07-39.png" title="screenshot1">
+<img src="./image.png" title="screenshot1">
 
 ## Prebuilt iso
 
