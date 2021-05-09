@@ -16,9 +16,7 @@ Minimal GUI Environment built with [archiso](https://gitlab.archlinux.org/archli
 
 ## Prebuilt iso
 
-```bash
-https://mega.nz/folder/0vZ1wKDC#4vTfffzF2vM9EES3BVSSrQ
-```
+See [releases](https://github.com/u0a266/myarch/releases)
 
 ## Read Manual
 
@@ -36,13 +34,21 @@ mksquashfs -h
 sudo pacman -S archiso arch-install-scripts dosfstools e2fsprogs libisoburn mtools squashfs-tools --needed
 ```
 
+## Build AUR packages
+
+```bash
+yay -G yay-bin man-pages-ja ttf-hackgen-nerd
+cd 
+makepkg -src
+repo-add foo.db.tar.xz *.pkg.tar.zst
+```
+
 ## Build
 
 ```bash
-sudo -i # or su root
-git clone https://github.com/u0a266/myarch.git
+sudo git clone https://github.com/u0a266/myarch.git
 cd myarch
-mkarchiso -v -w work/ -o out/ . 
+sudo mkarchiso -v -w work/ -o out/ . 
 ```
 
 ## Loopback iso boot with grub 
