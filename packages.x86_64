@@ -167,6 +167,6 @@ arandr
 firefox-ublock-origin
 firewalld
 # aur
-yay-bin
+paru-bin
 man-pages-ja
 ttf-hackgen-nerd
