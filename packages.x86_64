@@ -130,8 +130,6 @@ noto-fonts-emoji
 p7zip
 papirus-icon-theme
 pavucontrol
-pulseaudio
-pulseaudio-bluetooth
 scrot
 thunar
 thunar-archive-plugin
@@ -166,6 +164,9 @@ flameshot
 arandr
 firefox-ublock-origin
 firewalld
+pipewire
+pipewire-alsa
+pipewire-pulse
 # aur
 paru-bin
 man-pages-ja
