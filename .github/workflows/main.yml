@@ -30,7 +30,7 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Build iso
-        container: archlinux/archlinux:latest
+        uses: docker://archlinux/archlinux:latest
         run: |
           pacman -Syu archiso
           mkarchiso -v -w work -o out .
