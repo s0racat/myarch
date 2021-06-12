@@ -27,7 +27,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       - name: Install depends
-        run: pacman -S archiso --needed
+        run: pacman -Syu archiso --needed
 
       - name: Build archiso
         run: sudo mkarchiso -v -w work -o out .
