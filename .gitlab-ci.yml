@@ -1,9 +1,0 @@
-image: "archlinux/archlinux:latest"
-
-before_script:
-  - pacman -S archiso --noconfirm --needed
-
-Build-archiso:
-  script:
-    - mkarchiso -v -w work -o out .
-
