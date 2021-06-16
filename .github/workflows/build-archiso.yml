@@ -27,7 +27,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Install requirements
-        run: apt-get -y install --no-install-recommends \
+        run: sudo apt-get -y install --no-install-recommends \
           git pkg-config meson gcc libtool \
           libgpgme-dev libarchive-dev libcurl4-openssl-dev libssl-dev curl \
           gettext python3 python3-setuptools dash gawk ca-certificates \
@@ -42,7 +42,7 @@ jobs:
           git checkout $(git describe --tags --abbrev=0)
           meson build
           ninja -C build
-          ninja -C build install
+          sudo ninja -C build install
           echo "export LD_LIBRARY_PATH=/usr/lib64" >> /etc/environment
           source /etc/environment
 
