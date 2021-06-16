@@ -91,31 +91,3 @@ jobs:
           name: myarch-x86_64
           path: out
 
-  release:
-    runs-on: ubuntu-latest
-    needs: [build]
-
-    steps:
-
-      - uses: actions/checkout@v2
-
-      - name: Download artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: myarch-x86_64
-
-      - name: Create release
-        uses: softprops/action-gh-release@9993ae85344fa542b3edb2533f97011277698cf6
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-          DATE: $(date +%Y%m)
-        with:
-          tag_name: $DATE
-          name: $DATE
-          draft: false
-          prerelease: false
-          files: out/myarch-*-x86_64.iso
-
-
-
-
