@@ -10,6 +10,9 @@ on:
   pull_request:
     branches: [ master ]
 
+  schedule:
+    - cron: '0 0 1 * *'
+
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -75,11 +78,44 @@ jobs:
           git clone https://git.archlinux.org/arch-install-scripts
           cd arch-install-scripts
           git checkout $(git describe --tags --abbrev=0)
-          sudo apt-get -y install asciidoc
+          sudo apt-get -y install --no-install-recommends asciidoc
           sudo make install
 
       - name: Build my distro
         run: |
           sudo mkarchiso -v -w work -o out . 
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: myarch-x86_64
+          path: out
+
+  release:
+    runs-on: ubuntu-latest
+    needs: [build]
+
+    steps:
+
+      - uses: actions/checkout@v2
+
+      - name: Download artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: myarch-x86_64
+
+      - name: Create release
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          DATE: $(date +%Y%m)
+          uses: softprops/action-gh-release@9993ae85344fa542b3edb2533f97011277698cf6
+          with:
+            tag_name: $DATE
+            name: $DATE
+            draft: false
+            prerelease: false
+            files: out/myarch-*-x86_64.iso
+
+
 
 
