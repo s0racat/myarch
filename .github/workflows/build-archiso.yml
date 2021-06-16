@@ -51,6 +51,7 @@ jobs:
         run: |
           git clone https://gitlab.archlinux.org/archlinux/archlinux-keyring
           cd archlinux-keyring
+          git checkout $(git describe --tags --abbrev=0)
           sed -i "s|/local||g" Makefile
           sudo make install
           sudo pacman-key --init
