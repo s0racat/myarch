@@ -75,7 +75,7 @@ jobs:
           git clone https://git.archlinux.org/arch-install-scripts.git
           cd arch-install-scripts
           git checkout $(git describe --tags --abbrev=0)
-          curl "https://raw.githubusercontent.com/u0a266/myarch/master/.github/workflows/Makefile" -o Makefile
+          sudo apt-get -y install asciidoc
           sudo make install
 
       - name: Build my distro
