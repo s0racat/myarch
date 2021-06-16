@@ -45,7 +45,7 @@ jobs:
           meson build
           ninja -C build
           sudo ninja -C build install
-          echo "export LD_LIBRARY_PATH=/usr/lib64" >> /etc/environment
+          sudo sh -c 'echo "export LD_LIBRARY_PATH=/usr/lib64" >> /etc/environment'
           source /etc/environment
 
       - name: Setup archlinux-keyring
