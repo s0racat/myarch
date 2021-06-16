@@ -52,21 +52,21 @@ jobs:
         run: |
           git clone https://gitlab.archlinux.org/archlinux/archlinux-keyring
           cd archlinux-keyring
-          make install
-          pacman-key --init
-          pacman-key --populate archlinux
+          sudo make install
+          sudo pacman-key --init
+          sudo pacman-key --populate archlinux
 
       - name: Setup pacman
         run: |
-          mkdir -p /etc/pacman.d
-          curl "https://archlinux.org/mirrorlist/?country=all&protocol=http&protocol=https&ip_version=4&use_mirror_status=on" | sed s/#S/S/g > /etc/pacman.d/mirrorlist
-          curl https://raw.githubusercontent.com/u0a266/config/master/etc/pacman.conf > /etc/pacman.conf
+          sudo mkdir -p /etc/pacman.d
+          sudo sh -c 'curl "https://archlinux.org/mirrorlist/?country=all&protocol=http&protocol=https&ip_version=4&use_mirror_status=on" | sed s/#S/S/g > /etc/pacman.d/mirrorlist'
+          sudo sh -c "curl https://raw.githubusercontent.com/u0a266/config/master/etc/pacman.conf > /etc/pacman.conf"
 
       - name: Build archiso
         run: |
           git clone https://gitlab.archlinux.org/archlinux/archiso
           git checkout $(git describe --tags --abbrev=0)
-          make install
+          sudo make install
 
       - name: Build my distro
         run: |
