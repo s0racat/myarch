@@ -109,12 +109,12 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
           DATE: $(date +%Y%m)
       - uses: softprops/action-gh-release@9993ae85344fa542b3edb2533f97011277698cf6
-          with:
-            tag_name: $DATE
-            name: $DATE
-            draft: false
-            prerelease: false
-            files: out/myarch-*-x86_64.iso
+        with:
+          tag_name: $DATE
+          name: $DATE
+          draft: false
+          prerelease: false
+          files: out/myarch-*-x86_64.iso
 
 
 
