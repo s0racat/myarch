@@ -78,7 +78,7 @@ jobs:
           git clone https://git.archlinux.org/arch-install-scripts
           cd arch-install-scripts
           git checkout $(git describe --tags --abbrev=0)
-          sudo apt-get -y install --no-install-recommends asciidoc
+          sudo apt-get -y install asciidoc
           sudo make install
 
       - name: Build my distro
