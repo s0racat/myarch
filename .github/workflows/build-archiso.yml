@@ -28,7 +28,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Install requirements
         run: |
-          sudo apt-get update; sudo apt-get upgrade -y
+          sudo apt-get update
           sudo apt-get -y install --no-install-recommends \
           git pkg-config meson gcc libtool \
           libgpgme-dev libarchive-dev libcurl4-openssl-dev libssl-dev curl \
@@ -66,6 +66,7 @@ jobs:
       - name: Setup archiso
         run: |
           git clone https://gitlab.archlinux.org/archlinux/archiso
+          cd archiso
           git checkout $(git describe --tags --abbrev=0)
           sudo make install
 
