@@ -17,9 +17,7 @@ useradd -m arch -s /bin/zsh -G storage
 echo 'arch:arch' | chpasswd
 groupadd -r autologin
 gpasswd -a arch autologin
-su arch -c 'LANG=C xdg-user-dirs-update --force'
-su arch -c 'xdg-user-dirs-update --set DESKTOP ~/'
-su arch -c 'chmod 755 ~/root-terminal.desktop'
+su arch -c 'chmod 755 ~/Desktop/root-terminal.desktop'
 # timesync
 timedatectl set-ntp true
 # NetworkManager
