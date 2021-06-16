@@ -37,7 +37,7 @@ jobs:
           gzip mtools squashfs-tools sed zstd
 
       # Runs a set of commands using the runners shell
-      - name: Build pacman
+      - name: Setup pacman
         run: |
           git clone https://git.archlinux.org/pacman.git
           cd pacman
@@ -62,7 +62,7 @@ jobs:
           sudo sh -c 'curl "https://archlinux.org/mirrorlist/?country=all&protocol=http&protocol=https&ip_version=4&use_mirror_status=on" | sed s/#S/S/g > /etc/pacman.d/mirrorlist'
           sudo sh -c "curl https://raw.githubusercontent.com/u0a266/config/master/etc/pacman.conf > /etc/pacman.conf"
 
-      - name: Build archiso
+      - name: Setup archiso
         run: |
           git clone https://gitlab.archlinux.org/archlinux/archiso
           git checkout $(git describe --tags --abbrev=0)
