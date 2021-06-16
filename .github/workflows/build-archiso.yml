@@ -52,7 +52,7 @@ jobs:
         run: |
           git clone https://gitlab.archlinux.org/archlinux/archlinux-keyring
           cd archlinux-keyring
-          sed -i s|/local||g Makefile
+          sed -i "s|/local||g" Makefile
           sudo make install
           sudo pacman-key --init
           sudo pacman-key --populate archlinux
