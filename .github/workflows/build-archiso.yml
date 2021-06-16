@@ -75,7 +75,8 @@ jobs:
           git clone https://git.archlinux.org/arch-install-scripts.git
           cd arch-install-scripts
           git checkout $(git describe --tags --abbrev=0)
-          sudo install -Dm755 pacstrap.in /usr/local/bin/pacstrap
+          curl "https://raw.githubusercontent.com/u0a266/myarch/master/.github/workflows/Makefile" -o Makefile
+          sudo make install
 
       - name: Build my distro
         run: |
