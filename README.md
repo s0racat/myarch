@@ -2,6 +2,8 @@
 
 Minimal GUI Environment built with [archiso](https://gitlab.archlinux.org/archlinux/archiso)
 
+This distribution will be **automatically** built once a month
+
 ## Features
 
 - kernel: linux-lts
@@ -32,15 +34,6 @@ mksquashfs -h
 
 ```bash
 sudo pacman -S archiso arch-install-scripts dosfstools e2fsprogs libisoburn mtools squashfs-tools --needed
-```
-
-## Build AUR packages
-
-```bash
-yay -G yay-bin man-pages-ja ttf-hackgen-nerd
-cd 
-makepkg -src
-repo-add foo.db.tar.xz *.pkg.tar.zst
 ```
 
 ## Build
