@@ -18,7 +18,7 @@ This distribution will be **automatically** built once a month
 
 ## Screenshot
 
-<img src="./image.png" title="screenshot1">
+![](./image.png)
 
 ## Prebuilt iso
 
