@@ -487,6 +487,7 @@ _make_efi_dir_on_iso9660() {
         install -m 0644 -- "${profile}/syslinux/splash.png" "${isofs_dir}/EFI/syslinux/"
     fi
     install -m 0644 -- "${pacstrap_dir}/usr/lib/syslinux/efi64/"*.c32 "${isofs_dir}/EFI/syslinux/"
+    install -m 0644 -- "${pacstrap_dir}/usr/lib/syslinux/efi64/syslinux.efi" "${isofs_dir}/EFI/syslinux/syslinux.efi"
     #install -m 0644 -- "${pacstrap_dir}/usr/lib/syslinux/efi64/lpxelinux.0" "${isofs_dir}/EFI/syslinux/"
     #install -m 0644 -- "${pacstrap_dir}/usr/lib/syslinux/efi64/memdisk" "${isofs_dir}/EFI/syslinux/"
 
