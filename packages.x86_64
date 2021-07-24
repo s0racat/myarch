@@ -84,7 +84,7 @@ syslinux
 systemd-resolvconf
 tcpdump
 terminus-font
-termite-terminfo
+#termite-terminfo
 testdisk
 tmux
 udftools
