@@ -36,7 +36,7 @@ systemctl enable bluetooth
 # noto-cjk
 ln -s /etc/fonts/conf.avail/70-noto-cjk.conf /etc/fonts/local.conf
 # pacman
-pkgfile -u
+pkgfile -u || true
 yes|pacman -Scc
 pacman -Qdttq | pacman -Rsn - || true
 pacman-key --init
