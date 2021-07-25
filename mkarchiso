@@ -463,33 +463,19 @@ _make_bootmode_bios.syslinux.eltorito() {
 # Prepare /EFI on ISO-9660
 _make_efi_dir_on_iso9660() {
     _msg_info "Preparing an /EFI directory for the ISO 9660 file system..."
-    #install -d -m 0755 -- "${isofs_dir}/EFI/BOOT"
-    #install -m 0644 -- "${pacstrap_dir}/usr/lib/systemd/boot/efi/systemd-bootx64.efi" \
-    #    "${isofs_dir}/EFI/BOOT/BOOTx64.EFI"
+    install -d -m 0755 -- "${isofs_dir}/EFI/BOOT"
+    install -m 0644 -- "${pacstrap_dir}/usr/lib/systemd/boot/efi/systemd-bootx64.efi" \
+        "${isofs_dir}/EFI/BOOT/BOOTx64.EFI"
 
-    #install -d -m 0755 -- "${isofs_dir}/loader/entries"
-    #install -m 0644 -- "${profile}/efiboot/loader/loader.conf" "${isofs_dir}/loader/"
+    install -d -m 0755 -- "${isofs_dir}/loader/entries"
+    install -m 0644 -- "${profile}/efiboot/loader/loader.conf" "${isofs_dir}/loader/"
 
-    #for _conf in "${profile}/efiboot/loader/entries/"*".conf"; do
-    #    sed "s|%ARCHISO_LABEL%|${iso_label}|g;
-    #         s|%INSTALL_DIR%|${install_dir}|g;
-    #         s|%ARCH%|${arch}|g" \
-    #        "${_conf}" > "${isofs_dir}/loader/entries/${_conf##*/}"
-    #done
-    install -d -m 0755 -- "${isofs_dir}/EFI/syslinux"
-    for _cfg in "${profile}/syslinux/"*.cfg; do
+    for _conf in "${profile}/efiboot/loader/entries/"*".conf"; do
         sed "s|%ARCHISO_LABEL%|${iso_label}|g;
              s|%INSTALL_DIR%|${install_dir}|g;
              s|%ARCH%|${arch}|g" \
-             "${_cfg}" > "${isofs_dir}/EFI/syslinux/${_cfg##*/}"
+            "${_conf}" > "${isofs_dir}/loader/entries/${_conf##*/}"
     done
-    if [[ -e "${profile}/syslinux/splash.png" ]]; then
-        install -m 0644 -- "${profile}/syslinux/splash.png" "${isofs_dir}/EFI/syslinux/"
-    fi
-    install -m 0644 -- "${pacstrap_dir}/usr/lib/syslinux/efi64/"*.c32 "${isofs_dir}/EFI/syslinux/"
-    install -m 0644 -- "${pacstrap_dir}/usr/lib/syslinux/efi64/syslinux.efi" "${isofs_dir}/EFI/syslinux/syslinux.efi"
-    #install -m 0644 -- "${pacstrap_dir}/usr/lib/syslinux/efi64/lpxelinux.0" "${isofs_dir}/EFI/syslinux/"
-    #install -m 0644 -- "${pacstrap_dir}/usr/lib/syslinux/efi64/memdisk" "${isofs_dir}/EFI/syslinux/"
 
     # edk2-shell based UEFI shell
     # shellx64.efi is picked up automatically when on /
