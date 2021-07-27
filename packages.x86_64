@@ -167,6 +167,7 @@ firewalld
 pipewire
 pipewire-alsa
 pipewire-pulse
+veracrypt
 # aur
 paru-bin
 man-pages-ja
