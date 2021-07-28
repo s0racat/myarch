@@ -84,7 +84,6 @@ syslinux
 systemd-resolvconf
 tcpdump
 terminus-font
-#termite-terminfo
 testdisk
 tmux
 udftools
@@ -141,7 +140,6 @@ xdg-user-dirs
 zsh
 zsh-autosuggestions
 zsh-completions
-zsh-history-substring-search
 zsh-syntax-highlighting
 polkit-gnome
 xf86-input-libinput
