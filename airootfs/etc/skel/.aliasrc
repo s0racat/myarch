@@ -19,3 +19,5 @@ alias ip='ip --color=auto'
 alias cp='cp -v'
 alias mv='mv -v'
 alias yay='paru'
+alias sc='systemctl'
+
