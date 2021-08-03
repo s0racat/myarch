@@ -20,8 +20,7 @@ gpasswd -a arch autologin
 su arch -c 'chmod 755 ~/Desktop/root-terminal.desktop'
 # timesync
 timedatectl set-ntp true
-# NetworkManager
-systemctl enable NetworkManager
+systemctl enable systemd-networkd
 systemctl enable firewalld.service
 # tlp
 systemctl enable tlp.service
@@ -33,8 +32,6 @@ systemctl set-default graphical.target
 # bluetooth
 rfkill unblock all
 systemctl enable bluetooth
-# noto-cjk
-ln -s /etc/fonts/conf.avail/70-noto-cjk.conf /etc/fonts/local.conf
 # pacman
 pkgfile -u || true
 yes|pacman -Scc

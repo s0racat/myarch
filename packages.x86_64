@@ -107,22 +107,17 @@ archlinux-wallpaper
 blueberry
 bluez
 bluez-utils
-fcitx-im
-fcitx-mozc
-fcitx-configtool
+fcitx5-im
+fcitx5-mozc
+fcitx5-configtool
 firefox
-firefox-i18n-ja
 gnome-system-monitor
 gparted
 gpicview
 htop
 gvfs
 gvfs-mtp
-network-manager-applet
-networkmanager
-noto-fonts
-noto-fonts-cjk
-noto-fonts-emoji
+adobe-source-han-sans-jp-fonts
 p7zip
 papirus-icon-theme
 pavucontrol
@@ -130,7 +125,6 @@ scrot
 thunar
 thunar-archive-plugin
 tlp
-tlp-rdw
 wget
 xarchiver
 xdg-user-dirs
@@ -166,4 +160,3 @@ veracrypt
 # aur
 paru-bin
 man-pages-ja
-ttf-hackgen-nerd
