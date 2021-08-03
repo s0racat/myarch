@@ -102,7 +102,6 @@ zsh
 zip
 unzip
 adapta-gtk-theme
-aria2
 archlinux-wallpaper
 blueberry
 bluez
@@ -113,7 +112,7 @@ fcitx5-configtool
 firefox
 gnome-system-monitor
 gparted
-gpicview
+ristretto
 htop
 gvfs
 gvfs-mtp
@@ -140,7 +139,6 @@ volumeicon
 exa
 bat
 android-tools
-baobab
 xorg-xinit
 xorg-server
 xfce4
