@@ -25,9 +25,7 @@ jobs:
       image: archlinux/archlinux
       volumes:
         - /home/runner/work/myarch/myarch:/myarch
-      options: |
-        "--privileged --cap-add=SYS_ADMIN"
-        /sbin/init
+      options: "--privileged --cap-add=SYS_ADMIN --entrypoint=/sbin/init"
     # The type of runner that the job will run on
 
     # Steps represent a sequence of tasks that will be executed as part of the job
