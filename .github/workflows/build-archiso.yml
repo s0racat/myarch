@@ -28,6 +28,7 @@ jobs:
       options: "--privileged"
       cap_add:
             - SYS_ADMIN
+      command: /sbin/init
     # The type of runner that the job will run on
 
     # Steps represent a sequence of tasks that will be executed as part of the job
