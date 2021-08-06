@@ -22,7 +22,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: archlinux/archlinux
+      using: 'docker'
+      image: 'Dockerfile'
       volumes:
         - /home/runner/work/myarch/myarch:/myarch
       options: "--privileged --cap-add=SYS_ADMIN --entrypoint=/sbin/init"
