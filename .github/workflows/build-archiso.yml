@@ -20,8 +20,11 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
+    container:
+      image: archlinux/archlinux
+      volumes:
+        - .:/myarch
     # The type of runner that the job will run on
-    runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -31,30 +34,13 @@ jobs:
       # Runs a single command using the runners shell
       - name: Install requirements
         run: |
-          sudo apt-get update
-          sudo apt-get -y install --no-install-recommends \
-          libgpgme-dev libarchive-dev libcurl4-openssl-dev libssl-dev curl \
-          gettext python3 python3-setuptools dash gawk ca-certificates \
-          fakeroot xorriso e2fsprogs dosfstools \
-          gzip mtools squashfs-tools sed zstd 
+          pacman -Syu arch-install-scripts gawk dosfstools e2fsprogs findutils gzip libarchive libisoburn mtools openssl sed squashfs-tools
 
       # Runs a set of commands using the runners shell
-      - name: Setup pacman
-        run: |
-          curl -s https://api.github.com/repos/u0a266/archlinux-tools-deb/releases/latest \
-          | grep "browser_download_url.*deb" \
-          | cut -d : -f 2,3 \
-          | tr -d \" \
-          | wget -qi -
-          sudo apt-get -y install -o Dpkg::Options::="--force-overwrite" ./*.deb
-          sudo mkdir -p /etc/pacman.d
-          sudo sh -c 'curl "https://archlinux.org/mirrorlist/?country=all&protocol=http&protocol=https&ip_version=4&use_mirror_status=on" | sed s/#S/S/g > /etc/pacman.d/mirrorlist'
-          sudo pacman-key --init
-          sudo pacman-key --populate archlinux
-
       - name: Build my distro
         run: |
-          sudo ./mkarchiso -v -w work -o out . 
+          cd /myarch
+          ./mkarchiso -v -w work -o out . 
 
       - name: Upload artifact
         uses: actions/upload-artifact@v1
