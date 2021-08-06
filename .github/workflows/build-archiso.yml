@@ -20,12 +20,12 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     container:
       image: archlinux/archlinux
       volumes:
         - /home/runner/work/myarch/myarch:/myarch
-      options: "--privileged --cap-add=SYS_ADMIN --init=true"
+      options: "--privileged --cap-add=SYS_ADMIN /sbin/init"
     # The type of runner that the job will run on
 
     # Steps represent a sequence of tasks that will be executed as part of the job
