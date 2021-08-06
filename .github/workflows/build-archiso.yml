@@ -36,6 +36,11 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Install requirements
+        uses: docker://archlinux:latest
+        with:
+          args: "--privileged --cap-add=SYS_ADMIN /sbin/init"
+          volumes:
+            - /home/runner/work/myarch/myarch:/myarch
         run: |
           systemctl status
           pacman -Syu arch-install-scripts gawk dosfstools e2fsprogs findutils gzip libarchive libisoburn mtools openssl sed squashfs-tools --needed --noconfirm
