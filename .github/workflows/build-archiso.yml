@@ -24,7 +24,7 @@ jobs:
     container:
       image: archlinux/archlinux
       volumes:
-        - .:/myarch
+        - $GITHUB_WORKSPACE/myarch:/myarch
       options: "--privileged"
     # The type of runner that the job will run on
 
