@@ -7,6 +7,5 @@ services:
       - ../myarch:/myarch
     cap_add:
       - SYS_ADMIN
-    command: /sbin/init
     privileged: true
 
