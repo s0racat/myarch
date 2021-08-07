@@ -24,7 +24,7 @@ jobs:
     container:
       image: archlinux/archlinux
       volumes:
-        - /home/runner/work/myarch/myarch:/myarch
+        - /home/runner/work/myarch/myarch:/tmp/myarch
       options: "--privileged"
     # The type of runner that the job will run on
 
@@ -41,7 +41,7 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Build my distro
         run: |
-          cd /myarch
+          cd /tmp/myarch
           ./mkarchiso -v -w work -o out . 
 
       - name: Upload artifact
