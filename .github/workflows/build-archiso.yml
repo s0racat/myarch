@@ -21,6 +21,11 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     runs-on: ubuntu-latest
+    container:
+      image: archlinux/archlinux
+      volumes:
+        - /home/runner/work/myarch/myarch:/myarch
+      options: "--privileged"
     # The type of runner that the job will run on
 
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -30,7 +35,8 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Install requirements
-        run: docker-compose up --build
+        run: pacman -Syu arch-install-scripts gawk dosfstools e2fsprogs findutils gzip libarchive libisoburn mtools openssl sed squashfs-tools --needed --noconfirm
+
 
       # Runs a set of commands using the runners shell
       - name: Build my distro

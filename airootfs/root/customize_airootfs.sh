@@ -19,28 +19,26 @@ groupadd -r autologin
 gpasswd -a arch autologin
 su arch -c 'chmod 755 ~/Desktop/root-terminal.desktop'
 # timesync
-timedatectl set-ntp true
-systemctl enable systemd-networkd
-systemctl enable firewalld.service
+ln -s /usr/lib/systemd/system/systemd-timesyncd.service /etc/systemd/system/sysinit.target.wants/
+ln -s /usr/lib/systemd/system/firewalld.service /etc/systemd/system/multi-user.target.wants/
 # tlp
-systemctl enable tlp.service
-systemctl mask systemd-rfkill.service
-systemctl mask systemd-rfkill.socket
+ln -s /usr/lib/systemd/system/tlp.service /etc/systemd/system/multi-user.target.wants/
+ln -s /dev/null /etc/systemd/system/systemd-rfkill.service
+ln -s /dev/null /etc/systemd/system/systemd-rfkill.socket
 # gui
-systemctl enable lightdm
-systemctl set-default graphical.target
+ln -s /usr/lib/systemd/system/lightdm.service /etc/systemd/system/display-manager.service
 # bluetooth
 rfkill unblock all
-systemctl enable bluetooth
+ln -s /usr/lib/systemd/system/bluetooth.service /etc/systemd/system/bluetooth.target.wants/
 # pacman
 pkgfile -u || true
 yes|pacman -Scc
 pacman -Qdttq | pacman -Rsn - || true
 pacman-key --init
 pacman-key --populate archlinux
-systemctl enable reflector.service
+ln -s /usr/lib/systemd/system/reflector.timer /etc/systemd/system/timers.target.wants/
 # clean
-systemctl disable pacman-init.service choose-mirror.service
+rm -f /etc/systemd/system/multi-user.target/{pacman-init.service,choose-mirror.service}
 rm -f /etc/systemd/scripts/choose-mirror
 rm -rf /etc/systemd/system/{choose-mirror.service,pacman-init.service,etc-pacman.d-gnupg.mount}
 rm -f /root/{.automated_script.sh,.zlogin}
