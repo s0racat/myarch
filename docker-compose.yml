@@ -1,0 +1,12 @@
+version: "3.9"  # optional since v1.27.0
+services:
+  arch:
+    build: .
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup
+      - ../myarch:/myarch
+    cap_add:
+      - SYS_ADMIN
+    command: /sbin/init
+    privileged: true
+
