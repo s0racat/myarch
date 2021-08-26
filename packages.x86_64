@@ -103,7 +103,7 @@ zip
 unzip
 adapta-gtk-theme
 archlinux-wallpaper
-blueberry
+blueman
 bluez
 bluez-utils
 fcitx5-im
@@ -134,7 +134,6 @@ zsh-syntax-highlighting
 polkit-gnome
 xf86-input-libinput
 xorg-xinput
-pkgfile
 volumeicon
 exa
 bat
@@ -145,8 +144,6 @@ xfce4
 xfce4-whiskermenu-plugin
 xfce4-notifyd
 parcellite
-lightdm
-lightdm-gtk-greeter
 flameshot
 arandr
 firefox-ublock-origin
@@ -157,4 +154,3 @@ pipewire-pulse
 veracrypt
 # aur
 paru-bin
-man-pages-ja

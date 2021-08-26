@@ -15,12 +15,9 @@ echo 'root:root' | chpasswd
 usermod -s /bin/zsh root
 useradd -m arch -s /bin/zsh -G storage
 echo 'arch:arch' | chpasswd
-groupadd -r autologin
-gpasswd -a arch autologin
 su arch -c 'chmod 755 ~/Desktop/root-terminal.desktop'
 rfkill unblock all
 # pacman
-pkgfile -u || true
 yes|pacman -Scc
 pacman -Qdttq | pacman -Rsn - || true
 pacman-key --init
