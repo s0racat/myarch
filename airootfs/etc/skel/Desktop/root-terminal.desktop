@@ -1,9 +1,1 @@
-[Desktop Entry]
-Name=Root Terminal
-Exec=sh -c 'pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY xfce4-terminal'
-Comment=Start terminal as root
-Terminal=false
-Icon=gksu-root-terminal
-Type=Application
-Path=
-StartupNotify=false
+../.local/share/applications/root-terminal.desktop

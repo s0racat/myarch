@@ -2,6 +2,8 @@
 
 [![CI](https://github.com/u0a266/myarch/actions/workflows/build-archiso.yml/badge.svg)](https://github.com/u0a266/myarch/actions/workflows/build-archiso.yml)
 
+[![Github Download Counter](https://img.shields.io/github/downloads/u0a266/myarch/total.svg)]()
+
 ## Description
 
 Minimal GUI Environment built with [archiso](https://gitlab.archlinux.org/archlinux/archiso)

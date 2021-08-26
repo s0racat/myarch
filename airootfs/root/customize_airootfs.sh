@@ -10,6 +10,7 @@ set -e -u
 locale-gen
 
 sed -i "s/#Server/Server/g" /etc/pacman.d/mirrorlist
+sed -i "s/#Color/Color/" /etc/pacman.conf
 # User settings
 echo 'root:root' | chpasswd
 usermod -s /bin/zsh root
