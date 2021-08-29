@@ -1,25 +1,40 @@
-# Created by newuser for 5.8
-fpath=(/usr/share/zsh/site-functions/ $fpath)
+# zsh-completion
+[ -d /usr/share/zsh/site-functions ] && fpath=(/usr/share/zsh/site-functions/ $fpath)
 autoload -U compinit; compinit
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+# zsh-autosuggestions
+[ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+# zsh-syntax-highlighting
+[ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# prompt
 autoload -U promptinit; promptinit
 prompt walters
 setopt auto_cd
 setopt correct
-function chpwd() { exa }
 setopt nolistbeep
+setopt hist_ignore_dups
+setopt hist_ignore_all_dups
+setopt share_history
 # history
 export HISTFILE=$HOME/.zsh_history
 export HISTSIZE=10000
 export SAVEHIST=10000
-setopt hist_ignore_dups
-setopt hist_ignore_all_dups
-setopt share_history
-zstyle ':completion:*:default' menu select=2
-zstyle ':completion:*:(processes|jobs)' menu yes select=2
-zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' '+m:{A-Z}={a-z}'
-source /usr/share/doc/pkgfile/command-not-found.zsh
-source ~/.aliases
-bindkey -v
+# chpwd
+function chpwd() { exa }
+# completion
+zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+zstyle ':completion:*' list-colors "${LS_COLORS}"
+# pkgfile
+[ -f /usr/share/doc/pkgfile/command-not-found.zsh ] && source /usr/share/doc/pkgfile/command-not-found.zsh
+# alias
+[ -f ~/.aliasrc ] && source ~/.aliasrc
+# edit-command-line
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '\C-x\C-e' edit-command-line
+# <C-d> to exit zsh
+exit_zsh() { exit }
+zle -N exit_zsh
+bindkey '^D' exit_zsh
+# emacs keybind
+bindkey -e

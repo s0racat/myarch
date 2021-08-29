@@ -10,40 +10,23 @@ set -e -u
 locale-gen
 
 sed -i "s/#Server/Server/g" /etc/pacman.d/mirrorlist
-echo "root:root" | chpasswd
-useradd -m arch -s /bin/zsh -G storage
-echo "arch:arch" | chpasswd
-groupadd -r autologin
-gpasswd -a arch autologin
-su arch -c "LANG=C xdg-user-dirs-update --force"
+sed -i "s/#Color/Color/" /etc/pacman.conf
+# User settings
+echo 'root:root' | chpasswd
 usermod -s /bin/zsh root
-ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
-hwclock --systohc
-# NetworkManager
-systemctl enable NetworkManager
-# tlp
-tlp start
-systemctl enable tlp.service
-systemctl mask systemd-rfkill.service
-systemctl mask systemd-rfkill.socket
-# gui
-systemctl enable lightdm
-systemctl set-default graphical.target
-# bluetooth
+useradd -m arch -s /bin/zsh -G storage
+echo 'arch:arch' | chpasswd
+su arch -c 'chmod 755 ~/Desktop/root-terminal.desktop'
 rfkill unblock all
-systemctl enable bluetooth
 # pacman
-pkgfile -u
 yes|pacman -Scc
-yay -Yc --noconfirm
+pacman -Qdttq | pacman -Rsn - || true
 pacman-key --init
 pacman-key --populate archlinux
-pacman -Syu --noconfirm
 # clean
-systemctl disable pacman-init.service choose-mirror.service
+rm -f /etc/systemd/system/multi-user.target.wants/{pacman-init.service,choose-mirror.service}
 rm -f /etc/systemd/scripts/choose-mirror
 rm -rf /etc/systemd/system/{choose-mirror.service,pacman-init.service,etc-pacman.d-gnupg.mount}
 rm -f /root/{.automated_script.sh,.zlogin}
 rm -f /etc/mkinitcpio-archiso.conf
 rm -rf /etc/initcpio
-

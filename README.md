@@ -1,15 +1,32 @@
-# myarch
+# Myarch
 
-## features
+[![CI](https://github.com/u0a266/myarch/actions/workflows/build-archiso.yml/badge.svg)](https://github.com/u0a266/myarch/actions/workflows/build-archiso.yml)
 
-linux-lts kernel, xfce4 desktop environment, customized zsh, root terminal, fcitx-mozc with japanese input, jp106 keyboard, intel-gpu optimized
+[![Github Download Counter](https://img.shields.io/github/downloads/u0a266/myarch/total.svg)]()
 
-## screenshot
-<img src="https://github.com/llnnn-ux/myarch/blob/master/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2020-12-15_23-16-53.png" title="screenshot1">
+## Description
 
-<img src="https://github.com/llnnn-ux/myarch/blob/master/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2020-12-16_18-04-29.png" title="screenshot2">
+Minimal GUI Environment built with [archiso](https://gitlab.archlinux.org/archlinux/archiso)
 
-## read manual
+This distribution will be **automatically** built once a month
+
+## Features
+
+- kernel: linux-lts
+- Desktop environment: xfce
+- User shell: zsh /Advanced Completion/Useful aliases
+- Japanese input with fcitx-mozc
+- firefox with uBlock Origin
+
+## Screenshot
+
+![](./image.png)
+
+## Prebuilt iso
+
+See [releases](https://github.com/u0a266/myarch/releases)
+
+## Read Manual
 
 [gitlab archlinux official docs](https://gitlab.archlinux.org/archlinux/archiso/-/tree/master/docs)
 
@@ -19,49 +36,31 @@ man repo-add
 mksquashfs -h
 ```
 
-## install requirements
+## Install Requirements
 
 ```bash
-pacman -S archiso arch-install-scripts dosfstools e2fsprogs libisoburn mtools squashfs-tools --needed
+sudo pacman -S archiso arch-install-scripts dosfstools e2fsprogs libisoburn mtools squashfs-tools --needed
 ```
 
-## make custom repo
+## Build
 
 ```bash
-git clone https://aur.archlinux.org/someaur.git
-cd /path/to/aur
-makepkg -s # must not be run as root
-sudo -i # or su root
-mkdir -pv /root/custom/x86_64
-cp somename.pkg.tar.zst /root/custom/x86_64
-cd /root/custom/x86_64
-repo-add custom.db.tar.xz /root/custom/x86_64/*pkg.tar.zst*
-echo "somepkgname" >> /root/myarch/packages.x86_64
-```
-
-## build
-
-```bash
-sudo -i # or su root
-git clone https://github.com/llnnn-ux/myarch.git
+sudo git clone https://github.com/u0a266/myarch.git
 cd myarch
-mkarchiso -v -w work/ -o out/ . # customize out directory ex. /run/media/user/label
-```
-## prebuilt iso
-
-```bash
-https://mega.nz/file/sr4kjTTR#qCCLBhq4q8_paJnZBT2TVAEgHp3OSOcW-ooT6FZOz-Q
+sudo mkarchiso -v -w work/ -o out/ . 
 ```
 
-## loopback boot with grub 
+## Loopback iso boot with grub 
 
 [archwiki](https://wiki.archlinux.org/index.php/Multiboot_USB_drive)
 
 [archwiki ja](https://wiki.archlinux.jp/index.php/%E3%83%9E%E3%83%AB%E3%83%81%E3%83%96%E3%83%BC%E3%83%88_USB_%E3%83%89%E3%83%A9%E3%82%A4%E3%83%96)
 
+__Example__
+
 ```bash
 set isodevuuid="XXXX-XXXX"
-set label="somelabel"
+set label="LABEL"
 search --no-floppy --fs-uuid --set=root $isodevuuid
 set iso="/iso/myarch-2020.12.16-x86_64.iso"
 loopback loop $iso

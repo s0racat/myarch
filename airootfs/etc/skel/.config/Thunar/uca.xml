@@ -12,7 +12,7 @@
 </action>
 <action>
 	<icon>gksu-root-terminal</icon>
-	<name>ここでroot-terminal を開く</name>
+	<name>ここで rootでterminal を開く</name>
 	<unique-id>1607910046523582-1</unique-id>
 	<command>pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY xfce4-terminal --default-working-directory=%f</command>
 	<description>open root-terminal here</description>
