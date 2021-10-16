@@ -23,7 +23,6 @@ yes|pacman -Scc
 pacman -Qdttq | pacman -Rsn - || true
 pacman-key --init
 pacman-key --populate archlinux
-cp /usr/share/memtest86-efi/bootx64.efi /
 # clean
 rm -f /etc/systemd/system/multi-user.target.wants/{pacman-init.service,choose-mirror.service}
 rm -f /etc/systemd/scripts/choose-mirror
