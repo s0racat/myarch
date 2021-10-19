@@ -17,7 +17,6 @@ usermod -s /bin/zsh root
 useradd -m arch -s /bin/zsh -G storage
 echo 'arch:arch' | chpasswd
 su arch -c 'chmod 755 ~/Desktop/root-terminal.desktop'
-rfkill unblock all
 # pacman
 yes|pacman -Scc
 pacman -Qdttq | pacman -Rsn - || true
@@ -30,3 +29,5 @@ rm -rf /etc/systemd/system/{choose-mirror.service,pacman-init.service,etc-pacman
 rm -f /root/{.automated_script.sh,.zlogin}
 rm -f /etc/mkinitcpio-archiso.conf
 rm -rf /etc/initcpio
+ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
+
