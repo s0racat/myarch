@@ -23,9 +23,7 @@ pacman -Qdttq | pacman -Rsn - || true
 pacman-key --init
 pacman-key --populate archlinux
 # clean
-rm -f /etc/systemd/system/multi-user.target.wants/{pacman-init.service,choose-mirror.service}
 rm -f /etc/systemd/scripts/choose-mirror
-rm -rf /etc/systemd/system/{choose-mirror.service,pacman-init.service,etc-pacman.d-gnupg.mount}
 rm -f /root/{.automated_script.sh,.zlogin}
 rm -f /etc/mkinitcpio-archiso.conf
 rm -rf /etc/initcpio
