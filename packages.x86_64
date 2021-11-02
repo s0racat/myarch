@@ -140,7 +140,7 @@ xorg-server
 xfce4
 xfce4-whiskermenu-plugin
 xfce4-notifyd
-parcellite
+xfce4-clipman-plugin
 flameshot
 arandr
 firefox-beta-ublock-origin
