@@ -165,6 +165,7 @@ pipewire
 pipewire-alsa
 pipewire-pulse
 veracrypt
+otf-ipafont
 # aur
 paru-bin
 nwipe
