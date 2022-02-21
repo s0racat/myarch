@@ -1,11 +1,11 @@
-alsa-utils
+#alsa-utils
 amd-ucode
 arch-install-scripts
 archinstall
 b43-fwcutter
 base
 bind-tools
-brltty
+#brltty
 broadcom-wl
 btrfs-progs
 clonezilla
@@ -23,7 +23,7 @@ dosfstools
 e2fsprogs
 edk2-shell
 efibootmgr
-espeakup
+#espeakup
 ethtool
 exfatprogs
 f2fs-tools
@@ -52,7 +52,7 @@ linux
 linux-atm
 linux-firmware
 linux-firmware-marvell
-livecd-sounds
+#livecd-sounds
 lsscsi
 lvm2
 lynx
