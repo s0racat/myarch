@@ -173,7 +173,8 @@ tlp
 
 xdg-user-dirs
 
-# libinput
+# xorg
+xorg-server
 xf86-input-libinput
 
 # firewall
