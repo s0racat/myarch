@@ -119,3 +119,67 @@ wvdial
 xfsprogs
 xl2tpd
 zsh
+
+# gtk theme
+adapta-gtk-theme
+papirus-icon-theme
+
+# bluetooth
+bluez
+bluez-utils
+
+# fcitx
+fcitx5-im
+fcitx5-skk
+
+# firefox
+firefox
+firefox-ublock-origin
+
+# other desktop tools
+gnome-system-monitor
+xed
+gparted
+arandr
+
+# mtp
+gvfs-mtp
+
+# xfce
+xfce4
+thunar-archive-plugin
+xarchiver
+ristretto
+xfburn
+xfce4-whiskermenu-plugin
+xfce4-notifyd
+xfce4-clipman-plugin
+xfce4-screenshooter
+xfce4-pulseaudio-plugin
+
+# cli tools
+htop
+p7zip
+
+# fonts
+ttf-roboto-mono
+adobe-source-han-sans-jp-fonts
+
+# pipewire
+pipewire-alsa
+pipewire-pulse
+
+# powersave
+tlp
+
+xdg-user-dirs
+
+# libinput
+xf86-input-libinput
+
+# firewall
+firewalld
+
+# apps
+veracrypt
+keepassxc
