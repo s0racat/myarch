@@ -120,10 +120,6 @@ xfsprogs
 xl2tpd
 zsh
 
-# gtk theme
-adapta-gtk-theme
-papirus-icon-theme
-
 # bluetooth
 bluez
 bluez-utils
