@@ -154,11 +154,12 @@ xfburn
 xfce4-notifyd
 xfce4-screenshooter
 xfce4-pulseaudio-plugin
-xfce4-whiskermenu-plugin
 
 # cli tools
 htop
 p7zip
+exa
+bat
 
 # fonts
 ttf-roboto-mono
