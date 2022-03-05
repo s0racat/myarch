@@ -22,13 +22,13 @@ your_new_passwd
 your_new_passwd
 ```
 
-### Firefox
+## Firefox
 
-#### can't see picture on pixiv
+### can't see picture on pixiv
 
 https://github.com/soracqt/config-artix/blob/eaf4086da6a022322656589e165598e38970c8f8/dotfiles/.mozilla/firefox/pflrglpw.default-release/user.js#L753
 
-#### copy and paste on web not working eg. github, firefox
+### copy and paste on web not working eg. github, firefox
 
 https://github.com/soracqt/config-artix/blob/eaf4086da6a022322656589e165598e38970c8f8/dotfiles/.mozilla/firefox/pflrglpw.default-release/user.js#L116
 
