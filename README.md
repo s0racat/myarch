@@ -2,16 +2,26 @@
 
 ## Troubleshooting
 
-#### set keyboard layout to jp
+### set keyboard layout to jp
 
 ```bash
 setxkbmap jp
 ```
-#### return to en
+### return to en
 
 ```
 setxkbmap us
 ```
+
+### change user password
+
+```bash
+passwd
+arch
+your_new_passwd
+your_new_passwd
+```
+
 ### Firefox
 
 #### can't see picture on pixiv
