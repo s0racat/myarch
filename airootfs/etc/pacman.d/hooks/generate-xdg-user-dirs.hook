@@ -9,4 +9,4 @@ Description = Generate xdg-user-dirs
 When = PostTransaction
 Depends = sh
 Depends = xdg-user-dirs
-Exec = /bin/sh -c "su -c arch LANG=C xdg-user-dirs-update"
+Exec = /bin/sh -c "su arch -c 'LANG=C xdg-user-dirs-update'"
