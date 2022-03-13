@@ -23,3 +23,8 @@ your_new_passwd
 your_new_passwd
 ```
 
+### lock screen
+
+```bash
+i3lock -c 000000
+```
