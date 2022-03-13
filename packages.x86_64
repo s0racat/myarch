@@ -184,3 +184,6 @@ keepassxc
 # vaapi
 intel-media-driver
 intel-gpu-tools
+
+# locking
+i3lock
