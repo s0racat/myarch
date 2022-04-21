@@ -10,7 +10,6 @@ bind-tools
 btrfs-progs
 clonezilla
 cloud-init
-crda
 cryptsetup
 darkhttpd
 ddrescue
