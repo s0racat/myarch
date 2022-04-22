@@ -40,3 +40,7 @@ layout.css.devPixelsPerPx=1.3
 ```bash
 QT_SCALE_FACTOR=1.2
 ```
+
+### Other scaling setting
+
+https://wiki.archlinux.org/title/HiDPI
