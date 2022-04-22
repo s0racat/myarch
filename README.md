@@ -28,3 +28,9 @@ your_new_passwd
 ```bash
 i3lock -c 000000
 ```
+
+### firefox scaling
+
+```about:config
+layout.css.devPixelsPerPx=1.3
+```
