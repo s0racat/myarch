@@ -2,6 +2,13 @@
 
 ## Troubleshooting
 
+
+### pacman-key
+
+```bash
+sudo pacman-key --init && sudo pacman-key --populate
+```
+
 ### set keyboard layout to jp
 
 ```bash
