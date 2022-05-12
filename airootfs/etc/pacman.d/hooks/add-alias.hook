@@ -5,7 +5,7 @@ Type = Package
 Target = grml-zsh-config
 
 [Action]
-Description = adding alias for /etc/skel/.zshrc
+Description = Adding alias for /etc/skel/.zshrc
 When = PostTransaction
 Depends = sh
 Exec = /bin/sh -c "echo '[ -f ~/.aliasrc ] && source ~/.aliasrc' >> /etc/skel/.zshrc"
