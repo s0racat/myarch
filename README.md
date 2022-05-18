@@ -39,13 +39,13 @@ i3lock -c 000000
 ### firefox scaling
 
 ```about:config
-layout.css.devPixelsPerPx=1.3
+layout.css.devPixelsPerPx=1.25
 ```
 
 ### QT_APPS scaling
 
 ```bash
-QT_SCALE_FACTOR=1.2
+QT_SCALE_FACTOR=1.25
 ```
 
 ### Other scaling setting
