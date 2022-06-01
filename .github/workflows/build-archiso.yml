@@ -37,7 +37,7 @@ jobs:
         run: |
           pacman -Sy --noconfirm --needed pacman-contrib
           cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
-          sed -i 's/^#Server/Server/' /etc/pacman.d/mirrorlist.backup
+          sed -i 's/^#Server/Server/g' /etc/pacman.d/mirrorlist.backup
           rankmirrors -n 6 /etc/pacman.d/mirrorlist.backup > /etc/pacman.d/mirrorlist
           
       # Runs a single command using the runners shell
@@ -49,11 +49,11 @@ jobs:
       - name: Build my distro
         run: mkarchiso -v -w work -o out . 
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@v1
-        with:
-          name: myarch-x86_64
-          path: out
+      #- name: Upload artifact
+        #uses: actions/upload-artifact@v1
+        #with:
+          #name: myarch-x86_64
+          #path: out
 
   release:
     runs-on: ubuntu-latest
@@ -66,10 +66,13 @@ jobs:
         id: date
         run: echo "::set-output name=date::$(date +'%Y.%m.%d')"
 
-      - name: Download artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: myarch-x86_64
+      #- name: Download artifact
+        #uses: actions/download-artifact@v2
+        #with:
+          #name: myarch-x86_64
+
+      - name: generate hash
+        run: md5sum myarch-*-x86_64.iso > md5.txt
 
       - name: Create release
         uses: softprops/action-gh-release@v1
@@ -80,5 +83,8 @@ jobs:
           name: ${{ steps.date.outputs.date }}
           draft: false
           prerelease: false
-          files: myarch-*-x86_64.iso
+          files: |
+           myarch-*-x86_64.iso
+           md5.txt
+
 
