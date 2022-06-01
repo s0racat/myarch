@@ -72,7 +72,7 @@ jobs:
           #name: myarch-x86_64
 
       - name: generate hash
-        run: md5sum myarch-*-x86_64.iso > md5.txt
+        run: md5sum out/myarch-*-x86_64.iso > md5.txt
 
       - name: Create release
         uses: softprops/action-gh-release@v1
