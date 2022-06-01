@@ -84,7 +84,7 @@ jobs:
           draft: false
           prerelease: false
           files: |
-           myarch-*-x86_64.iso
+           out/myarch-*-x86_64.iso
            md5.txt
 
 
