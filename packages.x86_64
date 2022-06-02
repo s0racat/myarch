@@ -187,3 +187,7 @@ intel-gpu-tools
 
 # locking
 i3lock
+
+# gtk,icon theme
+arc-gtk-theme
+arc-icon-theme
