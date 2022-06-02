@@ -49,11 +49,11 @@ jobs:
       - name: Build my distro
         run: mkarchiso -v -w work -o out . 
 
-      #- name: Upload artifact
-        #uses: actions/upload-artifact@v1
-        #with:
-          #name: myarch-x86_64
-          #path: out
+      - name: Upload artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: myarch-x86_64
+          path: out
 
   release:
     runs-on: ubuntu-latest
@@ -66,13 +66,10 @@ jobs:
         id: date
         run: echo "::set-output name=date::$(date +'%Y.%m.%d')"
 
-      #- name: Download artifact
-        #uses: actions/download-artifact@v2
-        #with:
-          #name: myarch-x86_64
-
-      - name: generate hash
-        run: md5sum out/myarch*x86_64.iso > md5.txt
+      - name: Download artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: myarch-x86_64
 
       - name: Create release
         uses: softprops/action-gh-release@v1
@@ -84,7 +81,6 @@ jobs:
           draft: false
           prerelease: false
           files: |
-           out/myarch-*-x86_64.iso
-           md5.txt
+           myarch-*-x86_64.iso
 
 
