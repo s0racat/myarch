@@ -182,7 +182,6 @@ xf86-input-libinput
 firewalld
 
 # apps
-veracrypt
 keepassxc
 
 # vaapi
