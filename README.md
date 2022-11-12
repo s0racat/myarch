@@ -53,3 +53,7 @@ QT_SCALE_FACTOR=1.25
 ### Other scaling setting
 
 https://wiki.archlinux.org/title/HiDPI
+
+### Ventoy
+
+Use grub2 mode. Does not boot in systemd-boot.
