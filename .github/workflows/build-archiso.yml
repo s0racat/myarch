@@ -65,7 +65,7 @@ jobs:
       - name: Get current date
         id: date
         run: |
-          echo "{date}={$(date +'%Y.%m.%d %H:%M')}" >> $GITHUB_STATE
+          echo "date=$(date +'%Y-%m-%dT%R %:z')" >> $GITHUB_STATE
         
       - name: Download artifact
         uses: actions/download-artifact@v2
@@ -77,8 +77,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.event.repository.created_at }}
-          name: ${{ env.date }}
+          tag_name: ${{ steps.date.outputs.date }}
+          name: ${{ steps.date.outputs.date }}
           draft: false
           prerelease: false
           files: |
