@@ -49,6 +49,11 @@ jobs:
       - name: Build my distro
         run: mkarchiso -v -w work -o out . 
 
+      - name: Rename iso
+        run: |
+          cd run
+          mv myarch-*-x86_64.iso myarch-$(date +%Y.%m.%d)-x86-64_VTGRUB2.iso
+
       - name: Upload artifact
         uses: actions/upload-artifact@v1
         with:
@@ -84,6 +89,6 @@ jobs:
           draft: false
           prerelease: false
           files: |
-           myarch-*-x86_64.iso
+           myarch-*.iso
 
 
