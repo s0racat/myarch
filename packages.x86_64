@@ -98,7 +98,7 @@ sg3_utils
 smartmontools
 sof-firmware
 squashfs-tools
-sudo
+#sudo
 syslinux
 systemd-resolvconf
 tcpdump
@@ -137,7 +137,6 @@ firefox-ublock-origin
 gnome-system-monitor
 xed
 gparted
-arandr
 
 # mtp
 gvfs-mtp
@@ -194,3 +193,5 @@ arc-gtk-theme
 arc-icon-theme
 
 chntpw
+memtest86+-efi
+opendoas

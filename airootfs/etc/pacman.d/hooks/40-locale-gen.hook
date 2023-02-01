@@ -5,9 +5,8 @@ Type = Package
 Target = glibc
 
 [Action]
-Description = Uncommenting en_US.UTF-8 locale and running locale-gen...
+Description = Running locale-gen...
 When = PostTransaction
 Depends = glibc
-Depends = sed
 Depends = sh
-Exec = /bin/sh -c "sed -i 's/#\(en_US\.UTF-8\)/\1/' /etc/locale.gen && locale-gen"
+Exec = /bin/sh -c "locale-gen"
