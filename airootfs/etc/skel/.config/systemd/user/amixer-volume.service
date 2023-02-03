@@ -1,0 +1,11 @@
+[Unit]
+After=sound.target
+Description=Set pipewire volume to 0%
+
+[Service]
+ExecStartPre=/bin/sleep 20
+ExecStart=/bin/amixer set Master 0%
+Type=oneshot
+
+[Install]
+WantedBy=default.target
