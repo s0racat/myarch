@@ -1,7 +1,5 @@
 # myarch
 
-[![CI](https://github.com/soracqt/myarch/actions/workflows/build-archiso.yml/badge.svg)](https://github.com/soracqt/myarch/actions/workflows/build-archiso.yml)
-
 ## Build in Artix
 
 ```bash
