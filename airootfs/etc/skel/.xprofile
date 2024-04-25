@@ -2,3 +2,4 @@ export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 export LIBVA_DRIVER_NAME=iHD
+export GDK_DPI_SCALE=
