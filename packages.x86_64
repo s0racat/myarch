@@ -185,6 +185,7 @@ keepassxc
 
 # vaapi
 intel-media-driver
+libva-mesa-driver
 intel-gpu-tools
 
 # locking
