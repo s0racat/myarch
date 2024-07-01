@@ -8,4 +8,4 @@ Target = grml-zsh-config
 Description = Adding alias for /etc/skel/.zshrc
 When = PostTransaction
 Depends = sh
-Exec = /bin/sh -c "echo '[ -f ~/.aliasrc ] && source ~/.aliasrc' >> /etc/skel/.zshrc"
+Exec = /bin/sh -c "echo -e '[ -f ~/.aliasrc ] && source ~/.aliasrc\nexport LANG=en_US.UTF-8' >> /etc/skel/.zshrc"
