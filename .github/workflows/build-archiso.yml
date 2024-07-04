@@ -49,6 +49,10 @@ jobs:
       - name: Build my distro
         run: mkarchiso -v -w work -o out . 
 
+      - name: generate hash
+        run: | 
+          cd out
+          sha1sum myarch*.iso > myarch-sha1.txt
       # - name: Rename iso
       #   run: |
       #     cd out
